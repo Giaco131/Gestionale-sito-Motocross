@@ -1,0 +1,15 @@
+PISTA(CodPista,
+	Indirizzo, NomePista)
+CodPista  -> Indirizzo, NomePista
+Indirizzo -> NomePista
+'Indirizzo' è una stringa formata da 'DOVE MI TROVO, NUMERO' quindi "%, %"
+'CodPista' è un numero progressivo
+	
+ABBONAMENTI(CodPista, Tipo, Prezzo, Durata)
+		
+UTENTE(CodUtente,
+      Nome, Cognome, ScadenzaLicenza)
+	  
+RECAPITI(Codice, Tipo,
+	    Recapito)
+	  

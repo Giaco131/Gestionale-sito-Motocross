@@ -1,0 +1,51 @@
+body, html {
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-image:url('../immagini/background-body.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+body, input, select {
+	font-family:'Do Hyeon';
+	font-size:24px;
+}
+
+/*************************************************/
+
+td input, td select {
+	margin:5%;
+	width:90%;
+}
+
+/*************************************************/
+
+div.container {
+	width:70%;
+	height:100vh;
+	background-color:rgb(230,200,180);
+	background-color:rgba(230,200,180,0.8);
+}
+
+div.container table {
+	width:100%;
+	text-align:center;
+}
+
+div.container form {
+	padding:2%;
+	width:90%;
+	border:1px solid black;
+}
+
+div.container input[type='button'] {
+	margin:1%;
+	width:95%;
+}
+
+/*************************************************/
