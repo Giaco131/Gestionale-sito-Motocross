@@ -16,11 +16,21 @@ body, input, select {
 	font-size:24px;
 }
 
-/*************************************************/
+input[type='button'], input[type='submit'] {
+	border:none;
+	transition:background 0.4s;
+}
 
 td input, td select {
 	margin:5%;
 	width:90%;
+}
+
+div.aggiungi, div.rimuovi, div.visualizza {
+	height:33vh;
+	width:100%;
+	display:table-cell;
+	vertical-align:middle;
 }
 
 /*************************************************/
@@ -49,3 +59,34 @@ div.container input[type='button'] {
 }
 
 /*************************************************/
+
+div.aggiungi {
+	border:3px solid darkgreen;
+}
+
+div.aggiungi input[type='button'] {
+	color:darkgreen;
+}
+div.aggiungi input[type='button']:hover {
+	background:darkgray;
+	color:lightgreen;
+}
+
+div.aggiungi input[type='submit'] {
+	color:orange;
+}
+div.aggiungi input[type='submit']:hover {
+	background:darkgray;
+	color:red;
+}
+
+/*************************************************/
+
+div.visualizza {
+	border:3px solid orange;
+}
+/*************************************************/
+
+div.rimuovi {
+	border:3px solid red;
+}
