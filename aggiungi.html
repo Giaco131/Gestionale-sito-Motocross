@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gestione pista motocross</title>
+		<link href='stile/stile_interrogazioni_db.css' type='text/css' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Do Hyeon' rel='stylesheet'>
+		<link rel="icon" href="immagini/logo.png" type="image/png">
+		<script src="script/jquery.js"></script>
+	</head>
+	<body>
+		<center>
+			<div class='container'>
+				<div class='navigation'>
+					<div class='selected'><a href='#'>Aggiungi</a></div>
+					<div class='link'><a href='visualizza.html'>Visualizza</a></div>
+					<div class='link'><a href='elimina.html'>Elimina</a></div>
+					<div class='link'><a href='logout.html'>Logout</a></div>
+				</div>
+
+				<div class='aggiungi'>
+					<input id='bottoneRecapito' type='button' value='Aggiungi recapito'>
+					<form id='inserisciRecapito' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><select name='nomeRecapito'>
+									<option value='telefono'>Telefono</option>
+									<option value='fisso'>Fisso</option>
+									<option value='email'>Email</option>
+									<option value='skype'>Skype</option>
+									<option value='facebook'>Facebook</option>
+									<option value='twitter'>Twitter</option>
+									<option value='instagram'>Instagram</option>
+								</select></td>
+								<td><input name='recapito' type='text' placeholder='Recapito' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Aggiungi'>
+					</form>
+					
+					<input id='bottoneAbbonamento' type='button' value='Aggiungi abbonamento'>
+					<form id='inserisciAbbonamento' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><input name='nomeAbbonamento' type='text' placeholder='Nome' required></td>
+								<td><input name='prezzoAbbonamento' type='text' placeholder='Prezzo' required></td>
+								<td><input name='durataAbbonamento' type='text' placeholder='Durata' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Aggiungi'>
+					</form>
+					
+					<input id='bottoneGara' type='button' value='Aggiungi una gara'>
+					<form id='inserisciGara' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><input name='dataGara' type='date' required></td>
+								<td><input name='descrizioneGara' type='text' placeholder='Descrizione' required></td>
+								<td><input name='categoriaGara' type='text' placeholder='Categorie' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Aggiungi'>
+					</form>
+
+					<input id='bottoneOrario' type='button' value='Aggiungi un orario'>
+					<form id='inserisciOrario' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><select name='giorno'>
+									<option value='lunedi'>Lunedi</option>
+									<option value='martedi'>Martedi</option>
+									<option value='mercoledi'>Mercoledi</option>
+									<option value='giovedi'>Giovedi</option>
+									<option value='venerdi'>Venerdi</option>
+									<option value='sabato'>Sabato</option>
+									<option value='domenica'>Domenica</option>
+								</select></td>
+								<td><input name='da' type='text' placeholder='Da ore'></td>
+								<td><input name='a' type='text' placeholder='A ore'></td>
+							</tr>
+						</table>
+						<input type='submit' value='Aggiungi'>
+					</form>
+				</div>
+			</div>
+		</center>
+
+		<script>
+			var statiPremuto = [false,false,false,false];
+			function checkAndChangeStati(index) {
+				statiPremuto[index] = !statiPremuto[index];
+
+				for(let i=0; i<statiPremuto.length ;i++) {
+					if(i == index)
+						continue;
+					statiPremuto[i] =  false;
+				}
+
+				return statiPremuto[index];
+			}
+
+			$(document).ready(function() {
+				$('form').hide();
+
+				$('#bottoneRecapito').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(0)) {
+						$('#inserisciRecapito').slideToggle(131);
+					}
+				});
+				$('#bottoneAbbonamento').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(1)) {
+						$('#inserisciAbbonamento').slideToggle(131);
+					}
+				});
+				$('#bottoneGara').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(2)) {
+						$('#inserisciGara').slideToggle(131);
+					}
+				});
+				$('#bottoneOrario').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(3)) {
+						$('#inserisciOrario').slideToggle(131);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

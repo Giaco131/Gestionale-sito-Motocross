@@ -11,49 +11,27 @@
 		<center>
 			<div class='container'>
 				<div class='navigation'>
-					<div class='link'><a href='aggiungi.php'>Aggiungi</a></div>
+					<div class='link'><a href='aggiungi.html'>Aggiungi</a></div>
 					<div class='selected'><a href='#'>Visualizza</a></div>
-					<div class='link'><a href='elimina.php'>Elimina</a></div>
-					<div class='link'><a href='logout.php'>Logout</a></div>
+					<div class='link'><a href='elimina.html'>Elimina</a></div>
+					<div class='link'><a href='logout.html'>Logout</a></div>
 				</div>
 
 				<div class='visualizza'>
-					<input id='bottonePista' type='button' value='Visualizza pista'>
-					<form id='visualizzaPista' action='#' method='POST'>
-						<table>
-							<tr>
-								<td><input name='nomePista' type='text' placeholder='Nome'></td>
-								<td><input name='indirizzoPista' type='text' placeholder='Indirizzo'></td>
-							</tr>
-						</table>
-						<input type='submit' value='Visualizza'>
-					</form>
-
 					<input id='bottoneRecapito' type='button' value='Visualizza recapito'>
 					<form id='visualizzaRecapito' action='#' method='POST'>
 						<table>
 							<tr>
-								<td><input name='nomePista' type='text' placeholder='Nome pista'></td>
-								<td><select name='nomeRecapito'>
+								<td><select name='nomeRecapito' style='width:100%'>
 									<option value='tutti'>Tutti</option>
 									<option value='telefono'>Telefono</option>
 									<option value='fisso'>Fisso</option>
 									<option value='email'>Email</option>
 									<option value='skype'>Skype</option>
+									<option value='facebook'>Facebook</option>
+									<option value='twitter'>Twitter</option>
+									<option value='instagram'>Instagram</option>
 								</select></td>
-							</tr>
-						</table>
-						<input type='submit' value='Visualizza'>
-					</form>
-					
-					<input id='bottoneUtente' type='button' value='Visualizza utente'>
-					<form id='visualizzaUtente' action='#' method='POST'>
-						<table>
-							<tr>
-								<td><input name='codiceUtente' type='text' placeholder='Codice fiscale'></td>
-								<td><input name='nomeUtente' type='text' placeholder='Nome'></td>
-								<td><input name='cognomeUtente' type='text' placeholder='Cognome'></td>
-								<td><input name='scadenzaLicenza' type='date' title='Scadenza licenza'></td>
 							</tr>
 						</table>
 						<input type='submit' value='Visualizza'>
@@ -70,13 +48,28 @@
 						</table>
 						<input type='submit' value='Visualizza'>
 					</form>
-					
-					<input id='bottoneAbbonamentoUtente' type='button' value='Visualizza abbonamento ad un utente'>
-					<form id='visualizzaAbbonamentoUtente' action='#' method='POST'>
+
+
+					<input id='bottoneGara' type='button' value='Visualizza gare'>
+					<form id='visualizzaGara' action='#' method='POST'>
+						<input type='submit' value='Visualizza'>
+					</form>
+
+
+					<input id='bottoneOrario' type='button' value='Visualizza un orario'>
+					<form id='visualizzaOrario' action='#' method='POST'>
 						<table>
 							<tr>
-								<td><input name='codiceUtente' type='text' placeholder='Codice fiscale'></td>
-								<td><input name='nomeAbbonamento' type='text' placeholder='Nome abbonamento'></td>
+								<td><select name='giorno' style='width:100%'>
+									<option value='tutti'>Tutti</option>
+									<option value='lunedi'>Lunedi</option>
+									<option value='martedi'>Martedi</option>
+									<option value='mercoledi'>Mercoledi</option>
+									<option value='giovedi'>Giovedi</option>
+									<option value='venerdi'>Venerdi</option>
+									<option value='sabato'>Sabato</option>
+									<option value='domenica'>Domenica</option>
+								</select></td>
 							</tr>
 						</table>
 						<input type='submit' value='Visualizza'>
@@ -86,7 +79,7 @@
 		</center>
 
 		<script>
-			var statiPremuto = [false,false,false,false,false];
+			var statiPremuto = [false,false,false,false];
 			function checkAndChangeStati(index) {
 				statiPremuto[index] = !statiPremuto[index];
 
@@ -102,34 +95,28 @@
 			$(document).ready(function() {
 				$('form').hide();
 
-				$('#bottonePista').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(0)) {
-						$('#visualizzaPista').slideDown(131);
-					}
-				});
 				$('#bottoneRecapito').click(function() {
 					$('form').slideUp(131);
-					if(checkAndChangeStati(1)) {
+					if(checkAndChangeStati(0)) {
 						$('#visualizzaRecapito').slideToggle(131);
-					}
-				});
-				$('#bottoneUtente').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(2)) {
-						$('#visualizzaUtente').slideToggle(131);
 					}
 				});
 				$('#bottoneAbbonamento').click(function() {
 					$('form').slideUp(131);
-					if(checkAndChangeStati(3)) {
+					if(checkAndChangeStati(1)) {
 						$('#visualizzaAbbonamento').slideToggle(131);
 					}
 				});
-				$('#bottoneAbbonamentoUtente').click(function() {
+				$('#bottoneGara').click(function() {
 					$('form').slideUp(131);
-					if(checkAndChangeStati(4)) {
-						$('#visualizzaAbbonamentoUtente').slideToggle(131);
+					if(checkAndChangeStati(2)) {
+						$('#visualizzaGara').slideToggle(131);
+					}
+				});
+				$('#bottoneOrario').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(3)) {
+						$('#visualizzaOrario').slideToggle(131);
 					}
 				});
 			});

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gestione pista motocross</title>
+		<link href='stile/stile_interrogazioni_db.css' type='text/css' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Do Hyeon' rel='stylesheet'>
+		<link rel="icon" href="immagini/logo.png" type="image/png">
+		<script src="script/jquery.js"></script>
+	</head>
+	<body>
+		<center>
+			<div class='container'>
+				<div class='navigation'>
+					<div class='link'><a href='aggiungi.html'>Aggiungi</a></div>
+					<div class='link'><a href='visualizza.html'>Visualizza</a></div>
+					<div class='selected'><a href='#'>Elimina</a></div>
+					<div class='link'><a href='logout.html'>Logout</a></div>
+				</div>
+
+				<div class='elimina'>
+					<input id='bottoneRecapito' type='button' value='Elimina recapito'>
+					<form id='eliminaRecapito' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><input name='recapito' type='text' placeholder='Recapito' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Elimina'>
+					</form>
+					
+					<input id='bottoneAbbonamento' type='button' value='Elimina abbonamento'>
+					<form id='eliminaAbbonamento' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><input name='nomeAbbonamento' type='text' placeholder='Nome' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Elimina'>
+					</form>
+					
+					<input id='bottoneGara' type='button' value='Elimina una gara'>
+					<form id='eliminaGara' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><input name='dataGara' type='date' required></td>
+							</tr>
+						</table>
+						<input type='submit' value='Elimina'>
+					</form>
+				</div>
+			</div>
+		</center>
+
+		<script>
+			var statiPremuto = [false,false,false];
+			function checkAndChangeStati(index) {
+				statiPremuto[index] = !statiPremuto[index];
+
+				for(let i=0; i<statiPremuto.length ;i++) {
+					if(i == index)
+						continue;
+					statiPremuto[i] =  false;
+				}
+
+				return statiPremuto[index];
+			}
+
+			$(document).ready(function() {
+				$('form').hide();
+
+				$('#bottoneRecapito').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(0)) {
+						$('#eliminaRecapito').slideToggle(131);
+					}
+				});
+				$('#bottoneAbbonamento').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(1)) {
+						$('#eliminaAbbonamento').slideToggle(131);
+					}
+				});
+				$('#bottoneGara').click(function() {
+					$('form').slideUp(131);
+					if(checkAndChangeStati(2)) {
+						$('#eliminaGara').slideToggle(131);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
