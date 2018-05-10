@@ -19,12 +19,12 @@
 					<div class='selected'><a href='#'>Aggiungi</a></div>
 					<div class='link'><a href='visualizza.php'>Visualizza</a></div>
 					<div class='link'><a href='elimina.php'>Elimina</a></div>
-					<div class='link'><a href='../api/logout.php'>Home</a></div>
+					<div class='link'><a href='logout.php'>Home</a></div>
 				</div>
 
 				<div class='aggiungi'>
 					<input id='bottoneRecapito' type='button' value='Aggiungi recapito'>
-					<form id='inserisciRecapito' action='#' method='POST'>
+					<form id='inserisciRecapito' action='../api/aggiungi_recapito.php' method='POST'>
 						<table>
 							<tr>
 								<td><select name='nomeRecapito'>
@@ -43,7 +43,7 @@
 					</form>
 					
 					<input id='bottoneAbbonamento' type='button' value='Aggiungi abbonamento'>
-					<form id='inserisciAbbonamento' action='#' method='POST'>
+					<form id='inserisciAbbonamento' action='../api/aggiungi_abbonamento.php' method='POST'>
 						<table>
 							<tr>
 								<td><input name='nomeAbbonamento' type='text' placeholder='Nome' required></td>
@@ -55,19 +55,19 @@
 					</form>
 					
 					<input id='bottoneGara' type='button' value='Aggiungi una gara'>
-					<form id='inserisciGara' action='#' method='POST'>
+					<form id='inserisciGara' action='../api/aggiungi_gara.php' method='POST'>
 						<table>
 							<tr>
 								<td><input name='dataGara' type='date' required></td>
-								<td><input name='descrizioneGara' type='text' placeholder='Descrizione' required></td>
-								<td><input name='categoriaGara' type='text' placeholder='Categorie' required></td>
+								<td><input name='nomeGara' type='text' placeholder='Nome' required></td>
+								<td><input name='categoriaGara' type='text' placeholder='Categorie'></td>
 							</tr>
 						</table>
 						<input type='submit' value='Aggiungi'>
 					</form>
 
 					<input id='bottoneOrario' type='button' value='Aggiungi un orario'>
-					<form id='inserisciOrario' action='#' method='POST'>
+					<form id='inserisciOrario' action='../api/aggiungi_orario.php' method='POST'>
 						<table>
 							<tr>
 								<td><select name='giorno'>
@@ -79,12 +79,14 @@
 									<option value='sabato'>Sabato</option>
 									<option value='domenica'>Domenica</option>
 								</select></td>
-								<td><input name='da' type='text' placeholder='Da ore'></td>
-								<td><input name='a' type='text' placeholder='A ore'></td>
+								<td><input name='da' type='time' hint='Da ore' required></td>
+								<td><input name='a' type='time' hint='A ore' required></td>
 							</tr>
 						</table>
 						<input type='submit' value='Aggiungi'>
 					</form>
+					<?php include '../libraries/comodita.php';
+					stampaRisultato();?>
 				</div>
 			</div>
 		</center>

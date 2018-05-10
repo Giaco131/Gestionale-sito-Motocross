@@ -19,7 +19,7 @@
 					<div class='link'><a href='aggiungi.php'>Aggiungi</a></div>
 					<div class='link'><a href='visualizza.php'>Visualizza</a></div>
 					<div class='selected'><a href='#'>Elimina</a></div>
-					<div class='link'><a href='../api/logout.php'>Home</a></div>
+					<div class='link'><a href='logout.php'>Home</a></div>
 				</div>
 
 				<div class='elimina'>
@@ -70,11 +70,8 @@
 						</table>
 						<input type='submit' value='Elimina'>
 					</form>
-					<?php
-						if(isset($GET['result']) and isset($GET['message'])) {
-
-						}
-					?>
+					<?php include '../libraries/comodita.php';
+					stampaRisultato();?>
 				</div>
 			</div>
 		</center>

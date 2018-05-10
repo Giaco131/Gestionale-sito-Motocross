@@ -142,3 +142,15 @@ div.elimina input[type='button']:hover {
 	background:lightgray;
 	color:rgb(150, 11, 11);
 }
+
+/*************************************************/
+
+p.okee {
+	font-weight:bold;
+	color:darkgreen;
+}
+
+p.nope {
+	font-weight:bold;
+	color:darkred;
+}

@@ -24,18 +24,9 @@
 						<input name='password' type='Password' placeholder='Password'><br>
 						<input type='submit' value='Registrati'>
 					</form>
-					<?php
-						if(isset($_GET['result']) and isset($_GET['message'])) {
-							switch($_GET['result']) {
-								case 'okee':
-									echo "<p class='okee'>".$_GET['message'].'</p>';
-									break;
-								case 'nope':
-									echo "<p class='nope'>".$_GET['message'].'</p>';
-									break;
-							}
-						}
-					?>
+					<?php include '../libraries/comodita.php';
+					stampaRisultato();?>
+					<p>La password non e' case sensitive.</p>
 				</div>
 			</div>
 		</center>

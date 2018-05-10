@@ -19,7 +19,7 @@
 					<div class='link'><a href='aggiungi.php'>Aggiungi</a></div>
 					<div class='selected'><a href='#'>Visualizza</a></div>
 					<div class='link'><a href='elimina.php'>Elimina</a></div>
-					<div class='link'><a href='../api/logout.php'>Home</a></div>
+					<div class='link'><a href='logout.php'>Home</a></div>
 				</div>
 
 				<div class='visualizza'>
@@ -79,6 +79,8 @@
 						</table>
 						<input type='submit' value='Visualizza'>
 					</form>
+					<?php include '../libraries/comodita.php';
+					stampaRisultato();?>
 				</div>
 			</div>
 		</center>
