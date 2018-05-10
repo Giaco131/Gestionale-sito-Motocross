@@ -154,3 +154,25 @@ p.nope {
 	font-weight:bold;
 	color:darkred;
 }
+
+/*************************************************/
+table.rappresenta {
+	width:90%;
+	min-width:350px;
+	border:4px solid lightblue;
+	margin:10px;
+	padding:10px;
+	border-collapse: collapse;
+}
+
+.rappresenta th {
+	color:darkred;
+	border-right:3px solid black;
+	border-left:3px solid black;
+}
+
+.rappresenta td {
+	border-left:3px solid black;
+	border-right:3px solid black;
+	border-top:3px solid white;
+}

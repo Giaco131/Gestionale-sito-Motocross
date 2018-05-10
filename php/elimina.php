@@ -24,7 +24,7 @@
 
 				<div class='elimina'>
 					<input id='bottoneRecapito' type='button' value='Elimina recapito'>
-					<form id='eliminaRecapito' action='#' method='POST'>
+					<form id='eliminaRecapito' action='../api/elimina_recapito.php' method='POST'>
 						<table>
 							<tr>
 								<td><input name='recapito' type='text' placeholder='Recapito' required></td>
@@ -34,7 +34,7 @@
 					</form>
 					
 					<input id='bottoneAbbonamento' type='button' value='Elimina abbonamento'>
-					<form id='eliminaAbbonamento' action='#' method='POST'>
+					<form id='eliminaAbbonamento' action='../api/elimina_abbonamento.php' method='POST'>
 						<table>
 							<tr>
 								<td><input name='nomeAbbonamento' type='text' placeholder='Nome' required></td>
@@ -44,7 +44,7 @@
 					</form>
 					
 					<input id='bottoneGara' type='button' value='Elimina una gara'>
-					<form id='eliminaGara' action='#' method='POST'>
+					<form id='eliminaGara' action='../api/elimina_gara.php' method='POST'>
 						<table>
 							<tr>
 								<td><input name='dataGara' type='date' required></td>
@@ -54,7 +54,7 @@
 					</form>
 
 					<input id='bottoneOrario' type='button' value='Elimina un orario'>
-					<form id='eliminaOrario' action='#' method='POST'>
+					<form id='eliminaOrario' action='../api/elimina_orario.php' method='POST'>
 						<table>
 							<tr>
 								<td><select name='giorno' style='width:100%'>

@@ -23,60 +23,25 @@
 				</div>
 
 				<div class='visualizza'>
-					<input id='bottoneRecapito' type='button' value='Visualizza recapito'>
-					<form id='visualizzaRecapito' action='#' method='POST'>
-						<table>
-							<tr>
-								<td><select name='nomeRecapito' style='width:100%'>
-									<option value='tutti'>Tutti</option>
-									<option value='telefono'>Telefono</option>
-									<option value='fisso'>Fisso</option>
-									<option value='email'>Email</option>
-									<option value='skype'>Skype</option>
-									<option value='facebook'>Facebook</option>
-									<option value='twitter'>Twitter</option>
-									<option value='instagram'>Instagram</option>
-								</select></td>
-							</tr>
-						</table>
+					<input id='bottoneRecapito' type='button' value='Visualizza recapiti'>
+					<form id='visualizzaRecapito' action='../api/visualizza_recapiti.php' method='POST'>
 						<input type='submit' value='Visualizza'>
 					</form>
 					
-					<input id='bottoneAbbonamento' type='button' value='Visualizza abbonamento'>
-					<form id='visualizzaAbbonamento' action='#' method='POST'>
-						<table>
-							<tr>
-								<td><input name='nomeAbbonamento' type='text' placeholder='Nome'></td>
-								<td><input name='prezzoAbbonamento' type='text' placeholder='Prezzo'></td>
-								<td><input name='durataAbbonamento' type='text' placeholder='Durata'></td>
-							</tr>
-						</table>
+					<input id='bottoneAbbonamento' type='button' value='Visualizza abbonamenti'>
+					<form id='visualizzaAbbonamento' action='../api/visualizza_abbonamenti.php' method='POST'>
 						<input type='submit' value='Visualizza'>
 					</form>
 
 
 					<input id='bottoneGara' type='button' value='Visualizza gare'>
-					<form id='visualizzaGara' action='#' method='POST'>
+					<form id='visualizzaGara' action='../api/visualizza_gare.php' method='POST'>
 						<input type='submit' value='Visualizza'>
 					</form>
 
 
-					<input id='bottoneOrario' type='button' value='Visualizza un orario'>
-					<form id='visualizzaOrario' action='#' method='POST'>
-						<table>
-							<tr>
-								<td><select name='giorno' style='width:100%'>
-									<option value='tutti'>Tutti</option>
-									<option value='lunedi'>Lunedi</option>
-									<option value='martedi'>Martedi</option>
-									<option value='mercoledi'>Mercoledi</option>
-									<option value='giovedi'>Giovedi</option>
-									<option value='venerdi'>Venerdi</option>
-									<option value='sabato'>Sabato</option>
-									<option value='domenica'>Domenica</option>
-								</select></td>
-							</tr>
-						</table>
+					<input id='bottoneOrario' type='button' value='Visualizza orari'>
+					<form id='visualizzaOrario' action='../api/visualizza_orari.php' method='POST'>
 						<input type='submit' value='Visualizza'>
 					</form>
 					<?php include '../libraries/comodita.php';

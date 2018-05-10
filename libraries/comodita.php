@@ -9,4 +9,21 @@
 				break;
 		}
 	}
+}
+
+function stampaTabelle($titoli, $dati) {
+	echo '<table class="rappresenta"><tr>';
+	foreach($titoli as $value) {
+		echo "<th>$value</th>";
+	}
+	echo '</tr>';
+
+	foreach($dati as $riga) {
+		echo '<tr>';
+		foreach($riga as $colonna) {
+			echo "<td>$colonna</td>";
+		}
+		echo '</tr>';
+	}
+	echo '</table>';
 }?>
