@@ -2,19 +2,24 @@
 <html>
 	<head>
 		<title>Gestione pista motocross</title>
-		<link href='stile/stile_interrogazioni_db.css' type='text/css' rel='stylesheet'>
+
 		<link href='https://fonts.googleapis.com/css?family=Do Hyeon' rel='stylesheet'>
-		<link rel="icon" href="immagini/logo.png" type="image/png">
-		<script src="script/jquery.js"></script>
+		<link href='../css/avel.css' type='text/css' rel='stylesheet'>
+
+		<link rel="icon" href="../images/logo.png" type="image/png">
+
+		<script src="../libraries/jquery.js"></script>
+		<script src="../js/elimina.js"></script>
 	</head>
 	<body>
 		<center>
 			<div class='container'>
 				<div class='navigation'>
-					<div class='link'><a href='aggiungi.html'>Aggiungi</a></div>
-					<div class='link'><a href='visualizza.html'>Visualizza</a></div>
+					<h1>Gestionale per una pista di Motocross</h1>
+					<div class='link'><a href='aggiungi.php'>Aggiungi</a></div>
+					<div class='link'><a href='visualizza.php'>Visualizza</a></div>
 					<div class='selected'><a href='#'>Elimina</a></div>
-					<div class='link'><a href='logout.html'>Logout</a></div>
+					<div class='link'><a href='../api/logout.php'>Home</a></div>
 				</div>
 
 				<div class='elimina'>
@@ -47,46 +52,31 @@
 						</table>
 						<input type='submit' value='Elimina'>
 					</form>
+
+					<input id='bottoneOrario' type='button' value='Elimina un orario'>
+					<form id='eliminaOrario' action='#' method='POST'>
+						<table>
+							<tr>
+								<td><select name='giorno' style='width:100%'>
+									<option value='lunedi'>Lunedi</option>
+									<option value='martedi'>Martedi</option>
+									<option value='mercoledi'>Mercoledi</option>
+									<option value='giovedi'>Giovedi</option>
+									<option value='venerdi'>Venerdi</option>
+									<option value='sabato'>Sabato</option>
+									<option value='domenica'>Domenica</option>
+								</select></td>
+							</tr>
+						</table>
+						<input type='submit' value='Elimina'>
+					</form>
+					<?php
+						if(isset($GET['result']) and isset($GET['message'])) {
+
+						}
+					?>
 				</div>
 			</div>
 		</center>
-
-		<script>
-			var statiPremuto = [false,false,false];
-			function checkAndChangeStati(index) {
-				statiPremuto[index] = !statiPremuto[index];
-
-				for(let i=0; i<statiPremuto.length ;i++) {
-					if(i == index)
-						continue;
-					statiPremuto[i] =  false;
-				}
-
-				return statiPremuto[index];
-			}
-
-			$(document).ready(function() {
-				$('form').hide();
-
-				$('#bottoneRecapito').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(0)) {
-						$('#eliminaRecapito').slideToggle(131);
-					}
-				});
-				$('#bottoneAbbonamento').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(1)) {
-						$('#eliminaAbbonamento').slideToggle(131);
-					}
-				});
-				$('#bottoneGara').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(2)) {
-						$('#eliminaGara').slideToggle(131);
-					}
-				});
-			});
-		</script>
 	</body>
 </html>

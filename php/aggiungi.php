@@ -2,19 +2,24 @@
 <html>
 	<head>
 		<title>Gestione pista motocross</title>
-		<link href='stile/stile_interrogazioni_db.css' type='text/css' rel='stylesheet'>
+
 		<link href='https://fonts.googleapis.com/css?family=Do Hyeon' rel='stylesheet'>
-		<link rel="icon" href="immagini/logo.png" type="image/png">
-		<script src="script/jquery.js"></script>
+		<link href='../css/avel.css' type='text/css' rel='stylesheet'>
+
+		<link rel="icon" href="../images/logo.png" type="image/png">
+
+		<script src="../libraries/jquery.js"></script>
+		<script src="../js/aggiungi.js"></script>
 	</head>
 	<body>
 		<center>
 			<div class='container'>
 				<div class='navigation'>
+					<h1>Gestionale per una pista di Motocross</h1>
 					<div class='selected'><a href='#'>Aggiungi</a></div>
-					<div class='link'><a href='visualizza.html'>Visualizza</a></div>
-					<div class='link'><a href='elimina.html'>Elimina</a></div>
-					<div class='link'><a href='logout.html'>Logout</a></div>
+					<div class='link'><a href='visualizza.php'>Visualizza</a></div>
+					<div class='link'><a href='elimina.php'>Elimina</a></div>
+					<div class='link'><a href='../api/logout.php'>Home</a></div>
 				</div>
 
 				<div class='aggiungi'>
@@ -83,49 +88,5 @@
 				</div>
 			</div>
 		</center>
-
-		<script>
-			var statiPremuto = [false,false,false,false];
-			function checkAndChangeStati(index) {
-				statiPremuto[index] = !statiPremuto[index];
-
-				for(let i=0; i<statiPremuto.length ;i++) {
-					if(i == index)
-						continue;
-					statiPremuto[i] =  false;
-				}
-
-				return statiPremuto[index];
-			}
-
-			$(document).ready(function() {
-				$('form').hide();
-
-				$('#bottoneRecapito').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(0)) {
-						$('#inserisciRecapito').slideToggle(131);
-					}
-				});
-				$('#bottoneAbbonamento').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(1)) {
-						$('#inserisciAbbonamento').slideToggle(131);
-					}
-				});
-				$('#bottoneGara').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(2)) {
-						$('#inserisciGara').slideToggle(131);
-					}
-				});
-				$('#bottoneOrario').click(function() {
-					$('form').slideUp(131);
-					if(checkAndChangeStati(3)) {
-						$('#inserisciOrario').slideToggle(131);
-					}
-				});
-			});
-		</script>
 	</body>
 </html>

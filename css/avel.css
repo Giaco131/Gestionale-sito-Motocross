@@ -2,10 +2,11 @@ body, html {
     height:100%;
     margin:0;
     padding:0;
+    min-height:100vh;
 }
 
 body {
-    background-image:url('../immagini/background-body.jpg');
+    background-image:url('../images/background-body.jpg');
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
@@ -14,6 +15,13 @@ body {
 body, input, select {
 	font-family:'Do Hyeon';
 	font-size:24px;
+}
+
+h1 {
+	font-size:31px;
+	color:black;
+	padding:0;
+	margin:0;
 }
 
 input[type='button'], input[type='submit'] {
@@ -38,7 +46,7 @@ td input, td option {
 div.aggiungi, div.elimina, div.visualizza {
 	display:table-cell;
 	vertical-align:middle;
-	height:89vh;
+	height:79vh;
 	width:100%;
 }
 
